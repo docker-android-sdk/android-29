@@ -5,7 +5,7 @@ ENV ANDROID_SDK_ROOT /opt/android-sdk-linux
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV ANDROID_SDK /opt/android-sdk-linux
 
-ENV PATH "${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/emulator:${ANDROID_HOME}/bin"
+ENV PATH "${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/cmdline-tools/tools/bin:${ANDROID_HOME}/emulator:${ANDROID_HOME}/bin"
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -37,14 +37,16 @@ WORKDIR /opt/android-sdk-linux
 
 RUN /opt/tools/entrypoint.sh built-in
 
-RUN /opt/android-sdk-linux/tools/bin/sdkmanager "build-tools;29.0.3"
+RUN /opt/android-sdk-linux/cmdline-tools/tools/bin/sdkmanager "cmdline-tools;latest"
 
-RUN /opt/android-sdk-linux/tools/bin/sdkmanager "platforms;android-29"
+RUN /opt/android-sdk-linux/cmdline-tools/tools/bin/sdkmanager "build-tools;29.0.3"
 
-RUN /opt/android-sdk-linux/tools/bin/sdkmanager "platform-tools"
+RUN /opt/android-sdk-linux/cmdline-tools/tools/bin/sdkmanager "platforms;android-29"
 
-RUN /opt/android-sdk-linux/tools/bin/sdkmanager "emulator"
+RUN /opt/android-sdk-linux/cmdline-tools/tools/bin/sdkmanager "platform-tools"
 
-RUN /opt/android-sdk-linux/tools/bin/sdkmanager "system-images;android-29;google_apis;x86_64"
+RUN /opt/android-sdk-linux/cmdline-tools/tools/bin/sdkmanager "emulator"
+
+RUN /opt/android-sdk-linux/cmdline-tools/tools/bin/sdkmanager "system-images;android-29;google_apis;x86_64"
 
 CMD /opt/tools/entrypoint.sh built-in
