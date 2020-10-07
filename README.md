@@ -9,7 +9,7 @@ Docker for Android SDK 29 with preinstalled build tools and emulator image
 # sdkmanager --list
   Path                                        | Version | Description                                | Location
   -------                                     | ------- | -------                                    | -------
-  build-tools;29.0.3                          | 29.0.3  | Android SDK Build-Tools 29.0.3             | build-tools/29.0.3/
+  build-tools;30.0.2                          | 30.0.2  | Android SDK Build-Tools 30.0.2             | build-tools/30.0.2/
   cmdline-tools;latest                        | 2.1     | Android SDK Command-line Tools (latest)    | cmdline-tools/latest/
   emulator                                    | 30.1.5  | Android Emulator                           | emulator/
   patcher;v4                                  | 1       | SDK Patch Applier v4                       | patcher/v4/

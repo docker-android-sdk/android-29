@@ -39,7 +39,7 @@ RUN /opt/tools/entrypoint.sh built-in
 
 RUN /opt/android-sdk-linux/cmdline-tools/tools/bin/sdkmanager "cmdline-tools;latest"
 
-RUN /opt/android-sdk-linux/cmdline-tools/tools/bin/sdkmanager "build-tools;29.0.3"
+RUN /opt/android-sdk-linux/cmdline-tools/tools/bin/sdkmanager "build-tools;30.0.2"
 
 RUN /opt/android-sdk-linux/cmdline-tools/tools/bin/sdkmanager "platforms;android-29"
 
